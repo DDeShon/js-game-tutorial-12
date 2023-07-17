@@ -10,6 +10,7 @@ export class Player {
   update(input) {
     if (input.includes("ArrowRight")) this.x++;
     else if (input.includes("ArrowLeft")) this.x--;
+    else if (input.includes(" ")) this.y--;
   }
   draw(context) {
     context.drawImage(
