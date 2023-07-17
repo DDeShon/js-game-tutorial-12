@@ -10,9 +10,9 @@ export class InputHandler {
           e.key === " ") &&
         this.keys.indexOf(e.key) === -1
       ) {
-        this.keys.push(e.key, this.keys);
+        this.keys.push(e.key);
       }
-      console.log(e);
+      console.log(e.key, this.keys);
     });
     window.addEventListener("keyup", (e) => {
       if (
