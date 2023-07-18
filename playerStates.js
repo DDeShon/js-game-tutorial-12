@@ -15,6 +15,8 @@ export class Sitting extends State {
     super("SITTING");
     this.player = player;
   }
-  enter() {}
+  enter() {
+    this.player.frameY = 5;
+  }
   handleInput(input) {}
 }
