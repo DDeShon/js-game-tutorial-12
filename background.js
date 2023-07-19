@@ -13,6 +13,15 @@ class Layer {
     else this.x -= this.game.speed * this.speedModifier;
   }
   draw(context) {
-    context.drawImage();
+    context.drawImage(this.image, this.x, this.y, this.width, this.height);
+  }
+}
+
+export class Background {
+  constructor(game) {
+    this.game = game;
+    this.width = 1667;
+    this.height = 500;
+    this.layer5Image = layer5;
   }
 }
