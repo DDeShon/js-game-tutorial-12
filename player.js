@@ -29,6 +29,7 @@ export class Player {
   }
   update(input, deltaTime) {
     this.currentState.handleInput(input);
+
     // horizontal movement
     this.x += this.speed;
     if (input.includes("ArrowRight")) this.speed = this.maxSpeed;
@@ -37,10 +38,12 @@ export class Player {
     if (this.x < 0) this.x = 0;
     if (this.x > this.game.width - this.width)
       this.x = this.game.width - this.width;
+
     // vertical movement
     this.y += this.velocityY;
     if (!this.onGround()) this.velocityY += this.weight;
     else this.velocityY = 0;
+
     // sprite animation
     if (this.frameTimer > this.frameInterval) {
       this.frameTimer = 0;
