@@ -73,4 +73,13 @@ export class GroundEnemy extends Enemy {
   }
 }
 
-export class ClimbingEnemy extends Enemy {}
+export class ClimbingEnemy extends Enemy {
+  constructor(game) {
+    super();
+    this.game = game;
+    this.width = 120;
+    this.height = 144;
+    this.x = this.game.width;
+    this.y = Math.random();
+  }
+}
