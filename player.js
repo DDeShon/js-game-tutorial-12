@@ -28,6 +28,7 @@ export class Player {
     this.currentState.enter();
   }
   update(input, deltaTime) {
+    this.checkCollision();
     this.currentState.handleInput(input);
 
     // horizontal movement
