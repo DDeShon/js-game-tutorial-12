@@ -6,7 +6,7 @@ class Particle {
   update() {
     this.x -= this.speedX + this.game.speed;
     this.y -= this.speedY;
-    this.size *= 0.95;
+    this.size *= 0.97;
     if (this.size < 0.5) this.markedForDeletion = true;
   }
 }
@@ -45,8 +45,20 @@ export class Fire extends Particle {
   }
   update() {
     super.update();
+    this.angle += this.angleVelocity;
+    this.x += Math.sin(this.angle * 5);
   }
   draw(context) {
-    context.drawImage(this.image, this.x, this.y, this.size, this.size);
+    context.save();
+    context.translate(this.x, this.y);
+    context.rotate(this.angle);
+    context.drawImage(
+      this.image,
+      -this.size * 0.5,
+      -this.size * 0.5,
+      this.size,
+      this.size
+    );
+    context.restore();
   }
 }
