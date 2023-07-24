@@ -40,6 +40,8 @@ export class Fire extends Particle {
     this.y = y;
     this.speedX = 1;
     this.speedY = 1;
+    this.angle = 0;
+    this.angleVelocity = Math.random() * 0.2 - 0.1;
   }
   update() {
     super.update();
