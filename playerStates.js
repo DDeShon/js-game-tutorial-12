@@ -105,6 +105,12 @@ export class Rolling extends State {
       this.player.setState(states.RUNNING, 1);
     } else if (!input.includes(" ") && !this.player.onGround()) {
       this.player.setState(states.FALLING, 1);
+    } else if (
+      input.includes(" ") &&
+      input.includes("ArrowUp") &&
+      this.player.onGround()
+    ) {
+      this.player.velocityY -= 27;
     }
   }
 }
