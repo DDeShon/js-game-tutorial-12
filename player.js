@@ -4,7 +4,7 @@ import {
   Jumping,
   Falling,
   Rolling,
-  // Diving,
+  Diving,
   // Hit,
 } from "./playerStates.js";
 
@@ -32,7 +32,7 @@ export class Player {
       new Jumping(this.game),
       new Falling(this.game),
       new Rolling(this.game),
-      // new Diving(this.game),
+      new Diving(this.game),
       // new Hit(this.game),
     ];
   }
