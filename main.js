@@ -74,6 +74,9 @@ window.addEventListener("load", function () {
       this.particles.forEach((particle) => {
         particle.draw(context);
       });
+      this.collisions.forEach((collision) => {
+        collision.draw(context);
+      });
       this.UI.draw(context);
     }
     addEnemy() {
