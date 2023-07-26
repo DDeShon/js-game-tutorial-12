@@ -23,7 +23,9 @@ export class UI {
     context.fillText("Time: " + (this.game.time * 0.001).toFixed(0), 20, 80);
 
     // lives
-    context.drawImage(this.livesImage, 20, 95, 25, 25);
+    for (let i = 0; i < this.game.lives; i++) {
+      context.drawImage(this.livesImage, 25 * i + 20, 95, 25, 25);
+    }
 
     // game over message
     if (this.game.gameOver) {
