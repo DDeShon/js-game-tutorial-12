@@ -7,7 +7,7 @@ import { UI } from "./UI.js";
 window.addEventListener("load", function () {
   const canvas = document.getElementById("canvas1");
   const ctx = canvas.getContext("2d");
-  canvas.width = 500;
+  canvas.width = 900;
   canvas.height = 500;
 
   class Game {
@@ -30,9 +30,10 @@ window.addEventListener("load", function () {
       this.enemyInterval = 1000;
       this.debug = false;
       this.score = 0;
+      this.winningScore = 40;
       this.fontColor = "black";
       this.time = 0;
-      this.maxTime = 100000;
+      this.maxTime = 30000;
       this.gameOver = false;
       this.lives = 5;
       this.player.currentState = this.player.states[0];

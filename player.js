@@ -37,6 +37,7 @@ export class Player {
       new Diving(this.game),
       new Hit(this.game),
     ];
+    this.currentState = null;
   }
   update(input, deltaTime) {
     this.checkCollision();
@@ -127,6 +128,7 @@ export class Player {
           );
         } else {
           this.setState(6, 0);
+          this.game.score -= 5;
           this.game.lives--;
           if (this.game.lives <= 0) this.game.gameOver = true;
         }
