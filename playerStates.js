@@ -41,7 +41,7 @@ export class Running extends State {
   }
   enter() {
     this.game.player.frameX = 0;
-    this.game.player.maxFrame = 6;
+    this.game.player.maxFrame = 8;
     this.game.player.frameY = 3;
   }
   handleInput(input) {
@@ -128,7 +128,7 @@ export class Rolling extends State {
       this.game.player.onGround()
     ) {
       this.game.player.velocityY -= 27;
-    } else if (input.includes("ArrowDown")) {
+    } else if (input.includes("ArrowDown") && !this.game.player.onGround()) {
       this.game.player.setState(states.DIVING, 0);
     }
   }
