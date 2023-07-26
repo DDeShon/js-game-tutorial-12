@@ -9,14 +9,14 @@ export class FloatingMessage {
     this.timer = 0;
   }
   update() {
-    this.x += this.targetX - this.x;
-    this.y += this.targetY - this.y;
+    this.x += (this.targetX - this.x) * 0.03;
+    this.y += (this.targetY - this.y) * 0.03;
     this.timer++;
     if (this.timer > 100) this.markedForDeletion = true;
   }
   draw(context) {
     context.font = "20px Helvetica";
-    context.fillStyle = "white";
+    context.fillStyle = "red";
     context.fillText(this.value, this.x, this.y);
     context.fillStyle = "black";
     context.fillText(this.value, this.x + 2, this.y + 2);

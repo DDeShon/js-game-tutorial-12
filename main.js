@@ -57,7 +57,12 @@ window.addEventListener("load", function () {
           this.enemies.splice(this.enemies.indexOf(enemy), 1);
       });
 
-      // handles particles
+      // handle floating text
+      this.floatingMessage.forEach((message) => {
+        message.update();
+      });
+
+      // handle particles
       this.particles.forEach((particle, index) => {
         particle.update();
         if (particle.markedForDeletion) this.particles.splice(index, 1);
@@ -78,11 +83,20 @@ window.addEventListener("load", function () {
       this.enemies.forEach((enemy) => {
         enemy.draw(context);
       });
+
+      // handle particles
       this.particles.forEach((particle) => {
         particle.draw(context);
       });
+
+      // handle collisions
       this.collisions.forEach((collision) => {
         collision.draw(context);
+      });
+
+      // handle floating text
+      this.floatingMessage.forEach((message) => {
+        message.draw(context);
       });
       this.UI.draw(context);
     }
