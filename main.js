@@ -24,7 +24,7 @@ window.addEventListener("load", function () {
       this.enemies = [];
       this.particles = [];
       this.collisions = [];
-      this.floatingMessage = [];
+      this.floatingMessages = [];
       this.maxParticles = 200;
       this.enemyTimer = 0;
       this.enemyInterval = 1000;
@@ -58,9 +58,13 @@ window.addEventListener("load", function () {
       });
 
       // handle floating text
-      this.floatingMessage.forEach((message) => {
+      this.floatingMessages.forEach((message) => {
         message.update();
       });
+
+      this.floatingMessages = this.floatingMessages.filter(
+        (message) => !message.markedForDeletion
+      );
 
       // handle particles
       this.particles.forEach((particle, index) => {
@@ -95,7 +99,7 @@ window.addEventListener("load", function () {
       });
 
       // handle floating text
-      this.floatingMessage.forEach((message) => {
+      this.floatingMessages.forEach((message) => {
         message.draw(context);
       });
       this.UI.draw(context);

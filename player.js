@@ -122,8 +122,8 @@ export class Player {
           this.currentState === this.states[5]
         ) {
           this.game.score++;
-          this.game.floatingMessage.push(
-            new FloatingMessage("+1", enemy.x, enemy.y, 0, 0)
+          this.game.floatingMessages.push(
+            new FloatingMessage("+1", enemy.x, enemy.y, 150, 50)
           );
         } else {
           this.setState(6, 0);
