@@ -176,14 +176,13 @@ export class Hit extends State {
   enter() {
     this.game.player.frameX = 0;
     this.game.player.maxFrame = 10;
-    this.game.player.frameY = 6;
-    this.game.player.velocityY = 15;
+    this.game.player.frameY = 4;
   }
   handleInput(input) {
-    if (this.game.player.onGround()) {
+    if (this.game.player.frameX >= 10 && this.game.player.onGround()) {
       this.game.player.setState(states.RUNNING, 1);
-    } else if (input.includes(" ") && this.game.player.onGround()) {
-      this.game.player.setState(states.ROLLING, 2);
+    } else if (this.game.player.frameX >= 10 && !this.game.player.onGround()) {
+      this.game.player.setState(states.FALLING, 1);
     }
   }
 }
